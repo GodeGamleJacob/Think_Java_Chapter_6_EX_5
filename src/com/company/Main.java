@@ -3,7 +3,6 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-    static boolean isDoubloon = true;
 
     public static void isDoubloon (String text) {
         String textDublicate = text.toLowerCase();
@@ -23,13 +22,13 @@ public class Main {
                 return;
             }
         }
-        if (isDoubloon){
-
         System.out.println("Yaaaay! The word is a doubloon!");
-        }
+        testIfNumber();
     }
 
-    public static void main(String[] args) {
+    public static String testIfNumber(){
+        boolean isDoubloon = true;
+
         String[] tal = new String[10];
         tal [0] = "0";
         tal [1] = "1";
@@ -52,24 +51,15 @@ public class Main {
                 break;
             }
         }
-        if (isDoubloon = false){
-            System.out.println("Is not a doubloon");
+        if (!isDoubloon){
+            System.out.println("There is a number in your word, try again!");
+            testIfNumber();
         }
+        return text;
 
-/*
-        for (int i = 0; i < text.length(); i++) {
-            char letter = text.charAt(i);
-            for (int j = 0; j < tal.length; j++) {
-                if (letter == tal[j]){
-                    break;
-                }
-            }
-            if (i == Integer.parseInt(tal[i])){
-                break;
-            }
-        }
-
- */
-        isDoubloon(text);
+    }
+    public static void main(String[] args) {
+        String numberlessText = testIfNumber();
+        isDoubloon(numberlessText);
     }
 }
