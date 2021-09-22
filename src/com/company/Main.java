@@ -1,5 +1,6 @@
 
 package com.company;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -42,9 +43,11 @@ public class Main {
         tal [9] = "9";
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a word to see if it's a doubloon: ");
+        System.out.print("Type exit, if you want to close the program. \nType a word, to see if it's a doubloon.\n");
         String text = scanner.next();
-
+        if (text.toLowerCase().equals("exit")){
+            System.exit(0);
+        }
         for (int i = 0; i < tal.length; i++) {
             if (text.contains(tal[i])) {
                 isDoubloon = false;
