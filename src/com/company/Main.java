@@ -14,19 +14,19 @@ public class Main {
                 }
                 if (counter == 3) {
                     System.out.println("The word is not a doubloon!");
-                    return;
+                    testIfNumber();
                 }
             }
             if (counter <= 1) {
                 System.out.println("The word is not a doubloon!");
-                return;
+                testIfNumber();
             }
         }
         System.out.println("Yaaaay! The word is a doubloon!");
         testIfNumber();
     }
 
-    public static String testIfNumber(){
+    public static void testIfNumber(){
         boolean isDoubloon = true;
 
         String[] tal = new String[10];
@@ -55,11 +55,10 @@ public class Main {
             System.out.println("There is a number in your word, try again!");
             testIfNumber();
         }
-        return text;
+        isDoubloon(text);
 
     }
     public static void main(String[] args) {
-        String numberlessText = testIfNumber();
-        isDoubloon(numberlessText);
+        testIfNumber();
     }
 }
